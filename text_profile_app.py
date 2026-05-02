@@ -29,11 +29,14 @@ def show_about():
 # -----------------------------
 # Metadata section
 # -----------------------------
+# Create a table to display metadata
 def show_metadata(original_text, cleaned_text):
     table = Table(title="Text Metadata")
+    # Define table columns
     table.add_column("Property")
     table.add_column("Value")
 
+# Add rows with information about the text
     table.add_row("Original Text", original_text)
     table.add_row("Cleaned Text", cleaned_text)
     table.add_row("Character Count", str(len(cleaned_text)))
@@ -55,8 +58,10 @@ def main():
     user_text = input("Enter a short sentence or phrase: ")
 
     cleaned_text = user_text.strip()
+    # Replace lowercase "python" with capitalized "Python"
     replaced_text = cleaned_text.replace("python", "Python")
 
+# Display various string transformations
     console.print("\nUpdated Text Results")
     console.print("Stripped text:", cleaned_text)
     console.print("Uppercase:", cleaned_text.upper())
@@ -68,5 +73,6 @@ def main():
     show_metadata(user_text, cleaned_text)
     show_about()
 
+# Run the program
 if __name__ == "__main__":
     main()
